@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Apple Style Shoe Nav with Scroll Hide</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+<body>
+
+<nav class="navbar"  data-aos="fade-down" data-aos-duration="1000">
+    
+      <div class="logo" > <a href="#" class="brand"><img src="logo.png" alt="logo"></a></div>
+
+
+      <div class="nav-menu" >
+        <button class="nav-links" onclick="location.href='#top-anchor'">Home</button>
+        <button class="nav-links" onclick="location.href='#products-anchor'">Products</button>
+        <button class="nav-links" onclick="location.href='#About'">About</button>
+        <button class="nav-links" onclick="location.href='#footer-anchor'">Contact</button>
+        
+      </div>
+
+   <div class="search-container" >
+    <div class="search-box" id="searchBox">
+      <input type="text" placeholder="Search..." id="searchInput">
+      <button id="searchIcon"><i class="fas fa-search"></i></button>
+    </div>
+  </div>
+
+
+</nav>
+<div id="top-anchor"></div>
+<div class="main-container">
+         
+    <section class="hero" >
+          <div class="left-hero" data-aos="slide-down" data-aos-duration="1000">
+                <div class="slider">
+                  <img src="img1.png" alt="Shoe" class="slide active">
+                  <img src="redshoe.png" alt="Shoe" class="slide">
+                  <img src="shoe2.png" alt="Shoe" class="slide">
+                  <img src="img3.png" alt="Shoe" class="slide">
+                </div>
+                <div class="shadow"></div>
+          </div>      
+
+          <div class="text-area glass" data-aos="slide-up" data-aos-duration="1000">
+            <h1 id="rotating-text">Jump Higher</h1>
+            <p>Introducing <strong>Elite Kicks</strong> – Unleash power, style & performance with every step.</p>
+            <a href="#" class="btn">Explore Collection</a>
+          </div>
+  </section>
+    <section class="features-section" id="About" data-aos="zoom-in" data-aos-duration="1000">
+    <h2 class="features-title">Why Choose Our Shoes?</h2>
+
+    <div class="features-container">
+      <div class="feature-card"data-aos="zoom-in-right" data-aos-duration="1000">
+        <div class="feature-icon">👟</div>
+        <h3 class="feature-title">Premium Materials</h3>
+        <p class="feature-desc">Crafted with high-quality fabrics and durable soles that offer long-lasting performance in any condition.</p>
+      </div>
+
+      <div class="feature-card"data-aos="zoom-in" data-aos-duration="1000">
+        <div class="feature-icon">🛡️</div>
+        <h3 class="feature-title">Built for Durability</h3>
+        <p class="feature-desc">Our shoes are tested for strength and longevity so they can keep up with your fast-paced lifestyle.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon" data-aos="zoom-in" data-aos-duration="1000">⚡</div>
+        <h3 class="feature-title">Lightweight Comfort</h3>
+        <p class="feature-desc">Experience feather-light steps with shoes designed to reduce fatigue and boost performance.</p>
+      </div>
+
+      <div class="feature-card" data-aos="zoom-in-left" data-aos-duration="1000">
+        <div class="feature-icon">💨</div>
+        <h3 class="feature-title">Breathable Design</h3>
+        <p class="feature-desc">Stay cool and dry with our breathable mesh materials that keep air flowing all day long.</p>
+      </div>
+
+    </div>
+  </section>
+  <div id="products-anchor"></div>
+<section class="mens-shoes-section" id="menfootwears" data-aos="zoom-in" data-aos-duration="1000">
+  <div class="section-header">
+    <h2>Men's Shoes Collection</h2>
+    <p>Choose your style. Walk in confidence.</p>
+  </div>
+
+  <!-- Offer Banners -->
+  <div class="offer-banners">
+    <div class="banner glass"data-aos="fade-up" data-aos-duration="1000">🔥 50% OFF on Sneakers – Today Only!</div>
+    <div class="banner glass"data-aos="fade-up" data-aos-duration="1000">🆕 New Arrival: Classy Loafers</div>
+  </div>
+
+  <!-- Filter Buttons -->
+  <div class="shoe-filter">
+    <button class="filter-btn active" onclick="filterShoes('all', this)">All</button>
+    <button class="filter-btn" onclick="filterShoes('sneakers', this)">Sneakers</button>
+    <button class="filter-btn" onclick="filterShoes('boots', this)">Boots</button>
+    <button class="filter-btn" onclick="filterShoes('casuals', this)">Casuals</button>
+    <button class="filter-btn" onclick="filterShoes('formals', this)">Formals</button>
+    <button class="filter-btn" onclick="filterShoes('loafers', this)">Loafers</button>
+  </div>
+
+  <!-- Shoes Grid -->
+  <div class="shoe-layout" id="shoeContainer" data-aos="fade-up" data-aos-duration="1000"></div>
+  <div id="noResultsMen">No results found.</div>
+  
+</section>
+
+
+
+<!-- womens section -->
+<section class="wfoot-section" id="wo-wears"  data-aos="zoom-in-up" data-aos-duration="1000" data-aos-mirror="false"  data-aos-once="false">
+  <div class="wfoot-header">
+    <h2>Women's Footwear Collection</h2>
+    <p>Step out in style and grace.</p>
+  </div>
+
+  <div class="wfoot-banners">
+    <div class="wfoot-banner glassy">✨ 40% OFF on Heels – Limited Time!</div>
+    <div class="wfoot-banner glassy">🆕 New Arrival: Elegant Flats</div>
+  </div>
+
+  <div class="wfoot-filter">
+    <button class="wfoot-filter-btn active" onclick="wfootFilter('all', this)">All</button>
+    <button class="wfoot-filter-btn" onclick="wfootFilter('heels', this)">Heels</button>
+    <button class="wfoot-filter-btn" onclick="wfootFilter('flats', this)">Flats</button>
+    <button class="wfoot-filter-btn" onclick="wfootFilter('boots', this)">Boots</button>
+    <button class="wfoot-filter-btn" onclick="wfootFilter('sandals', this)">Sandals</button>
+  </div>
+
+  <div class="wfoot-grid" id="wfootGrid"></div>
+  <div id="noResultsWfoot">No results found.</div>
+</section>
+
+</div>
+  <div id="footer-anchor"></div>
+<footer class="mega-footer" data-aos="zoom-in-left" data-aos-duration="1000" data-aos-offset="15">
+  <div class="footer-top">
+    <div class="footer-branding">
+      <h1 class="footer-logo">Govardhan</h1>
+      <p>Your ultimate destination for men’s and women’s footwear</p>
+      <div class="social-icons">
+        <a href="#" class="social-icon facebook"><i class="fa-brands fa-facebook"></i></a>
+        <a href="#" class="social-icon twitter"><i class="fa-brands fa-twitter"></i></a>
+        <a href="#" class="social-icon instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" class="social-icon linkedin"><i class="fa-brands fa-linkedin"></i></a>
+      </div>
+    </div>
+
+    <div class="footer-links">
+      <div class="link-group">
+        <h3>About Us</h3>
+        <ul>
+          <li><a href="#">Our Story</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Sustainability</a></li>
+          <li><a href="#">Press</a></li>
+          <li><a href="#">Blog</a></li>
+        </ul>
+      </div>
+      <div class="link-group">
+        <h3>Shop</h3>
+        <ul>
+          <li><a href="#">Men’s Shoes</a></li>
+          <li><a href="#">Women’s Shoes</a></li>
+          <li><a href="#">New Arrivals</a></li>
+          <li><a href="#">Best Sellers</a></li>
+          <li><a href="#">Sale</a></li>
+        </ul>
+      </div>
+      <div class="link-group">
+        <h3>Help & Support</h3>
+        <ul>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">Shipping</a></li>
+          <li><a href="#">Returns</a></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Size Guide</a></li>
+        </ul>
+      </div>
+      <div class="link-group newsletter">
+        <h3>Newsletter</h3>
+        <p>Subscribe for exclusive offers and updates</p>
+        <form class="newsletter-form" action="#">
+          <input type="email" placeholder="Enter your email" required />
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-middle" data-aos="fade-up" data-aos-duration="1000"> 
+    <div class="newsletter-highlights">
+      <div class="highlight">
+        <h4>Free Shipping</h4>
+        <p>On orders over $50</p>
+      </div>
+      <div class="highlight">
+        <h4>Secure Payment</h4>
+        <p>100% secure checkout</p>
+      </div>
+      <div class="highlight">
+        <h4>24/7 Support</h4>
+        <p>We're here to help anytime</p>
+      </div>
+      <div class="highlight">
+        <h4>Easy Returns</h4>
+        <p>30 days money back guarantee</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom"  data-aos="zoom-in" data-aos-duration="1000">
+    <div class="payment-icons">
+      <img src="https://img.icons8.com/color/48/000000/visa.png" alt="Visa" />
+      <img src="https://img.icons8.com/color/48/000000/mastercard.png" alt="Mastercard" />
+      <img src="https://img.icons8.com/color/48/000000/paypal.png" alt="Paypal" />
+      <img src="https://img.icons8.com/color/48/000000/amex.png" alt="Amex" />
+      <img src="https://img.icons8.com/color/48/000000/apple-pay.png" alt="Apple Pay" />
+    </div>
+    <div class="copyright">
+      &copy; 2025 ShoeZone. All rights reserved.
+    </div>
+  </div>
+</footer>
+
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+  // Initialize AOS once
+  AOS.init({
+    once: false    // if true, animations run only once
+  });
+
+  // 👇 Optional: refresh after full load or scroll jump
+  window.addEventListener("load", () => {
+    setTimeout(() => {
+      AOS.refresh();
+    }, 200); // wait for layout to settle
+  });
+
+  // 👇 Optional: refresh again after a scroll jump
+  window.addEventListener("hashchange", () => {
+    setTimeout(() => {
+      AOS.refresh();
+    }, 200);
+  });
+</script>
+
+</body>
+
+<script src="script.js"></script>
+</html>
